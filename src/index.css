@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+body {
+  background-color: #FFF0F5; /* LavenderBlush - Light Pink */
+  color: #333333;
+  font-family: 'Inter', sans-serif;
+  background-image: radial-gradient(circle at top right, rgba(255, 235, 153, 0.4), transparent 40%),
+                    radial-gradient(circle at bottom left, rgba(255, 182, 193, 0.4), transparent 40%);
+  background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #D81B60; /* Deep Pink */
+}
+
+.text-blue-900, .text-\[\#D4AF37\] {
+  color: #D81B60 !important;
+}
+
+.bg-white, .bg-\[\#111111\], .bg-\[\#1a1a1a\], .bg-\[\#111\] {
+  background-color: #FFFFFF !important;
+  color: #333333 !important;
+  border: 1px solid #FFD1DC !important;
+  box-shadow: 0 10px 30px rgba(216, 27, 96, 0.05) !important;
+}
+
+.bg-gray-50, .bg-\[\#0a0a0a\], .bg-\[\#121212\] {
+  background-color: transparent !important;
+}
+
+input, textarea, select {
+  color: #333333 !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #FFD1DC !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #D81B60 !important;
+  outline: none;
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 182, 193, 0.5) !important;
+}
+
+/* Override text colors for dark mode texts */
+.text-gray-100, .text-gray-200, .text-gray-300, .text-gray-400 {
+  color: #555555 !important;
+}
+
+/* Override gold buttons to deep pink */
+.bg-\[\#D4AF37\] {
+  background-color: #D81B60 !important;
+  color: #FFFFFF !important;
+}
+.bg-\[\#D4AF37\]:hover {
+  background-color: #C2185B !important;
+}
