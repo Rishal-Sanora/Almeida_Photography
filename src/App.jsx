@@ -2,12 +2,12 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import MainLayout from "./layouts/MainLayout";
+import MainLayout from "./layouts/MainLayoutComponent";
 import DashboardLayout from "./layouts/DashboardLayout";
 import UserLayout from "./layouts/UserLayout";
 
 // Public Pages
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/HomePage";
 import Portfolio from "./pages/Portfolio/Portfolio";
 import PortfolioCategory from "./pages/Portfolio/PortfolioCategory";
 import Services from "./pages/Services/Services";

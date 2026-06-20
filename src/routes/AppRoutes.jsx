@@ -2,12 +2,12 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../layouts/MainLayoutComponent";
 import DashboardLayout from "../layouts/DashboardLayout";
 import UserLayout from "../layouts/UserLayout";
 
 // Public Pages
-import Home from "../pages/Home/Home";
+import Home from "../pages/Home/HomePage";
 import AboutPage from "../pages/About/AboutPage";
 import Services from "../pages/Services/Services";
 import Portfolio from "../pages/Portfolio/Portfolio";
