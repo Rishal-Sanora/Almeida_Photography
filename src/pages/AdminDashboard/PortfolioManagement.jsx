@@ -94,6 +94,7 @@ function PortfolioManagement() {
               key={photo._id}
               photo={photo}
               onClick={(p) => setSelectedPhoto(p)}
+              onDelete={(id) => removePhoto(id)}
             />
           ))}
         {photos.length === 0 && (
