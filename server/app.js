@@ -13,6 +13,7 @@ const portfolioRoutes = require("./routes/portfolioRoutes");
 const bookingRoutes = require("./routes/bookingRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
+const clientPhotoRoutes = require("./routes/clientPhotoRoutes");
 
 const path = require("path");
 const app = express();
@@ -40,6 +41,8 @@ app.use("/api/bookings", bookingRoutes);
 app.use("/api/contact", contactRoutes);
 
 app.use("/api/upload", uploadRoutes);
+
+app.use("/api/clientphotos", clientPhotoRoutes);
 
 // Home Route
 app.get("/", (req, res) => {
