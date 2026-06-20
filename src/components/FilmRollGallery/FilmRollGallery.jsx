@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import { API_BASE_URL } from "../../config";
 
 function FilmRollGallery() {
   const [frames, setFrames] = useState([]);
@@ -10,7 +11,7 @@ function FilmRollGallery() {
       try {
         const response = await api.get("/portfolio");
         let portfolioImages = response.data.map(img => 
-          img.image.startsWith("http") ? img.image : `http://localhost:5000${img.image}`
+          img.image.startsWith("http") ? img.image : `${API_BASE_URL}${img.image}`
         );
         
         // Ensure we have at least 16 images to make 4 grids of 4

@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { API_BASE_URL } from "../../config";
 
 function BookingManagement() {
   const [bookings, setBookings] = useState([]);
 
   const fetchBookings = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/bookings");
+      const res = await axios.get(`${API_BASE_URL}/api/bookings`);
       setBookings(res.data);
     } catch (err) {
       console.error(err);
@@ -22,7 +23,7 @@ function BookingManagement() {
 
   const updateStatus = async (booking, status) => {
     try {
-      await axios.put(`http://localhost:5000/api/bookings/${booking._id}/status`, { status });
+      await axios.put(`${API_BASE_URL}/api/bookings/${booking._id}/status`, { status });
       toast.success(`Booking ${status}!`);
       
       if (booking.phone) {

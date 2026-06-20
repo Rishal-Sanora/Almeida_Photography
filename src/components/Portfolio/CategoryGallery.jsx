@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getPortfolio } from "../../services/portfolioService";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function CategoryGallery() {
 
@@ -75,7 +76,7 @@ function CategoryGallery() {
           >
             <div className="absolute inset-0 bg-gradient-to-tr from-pink-400/20 to-yellow-400/20 opacity-0 group-hover:opacity-100 transition duration-500 z-10 pointer-events-none"></div>
             <img
-              src={photo.image.startsWith("http") ? photo.image : `http://localhost:5000${photo.image}`}
+              src={photo.image.startsWith("http") ? photo.image : `${API_BASE_URL}${photo.image}`}
               alt={photo.title}
               className="w-full h-full object-cover transform transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
             />

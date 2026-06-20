@@ -1,7 +1,7 @@
 async function testFlow() {
   try {
     // 1. Forgot Password
-    const forgotRes = await fetch("http://localhost:5000/api/auth/forgotpassword", {
+    const forgotRes = await fetch("https://almeida-photography-1.onrender.com/api/auth/forgotpassword", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email: "admin@example.com" }) // assuming an admin exists, or we need to register one
@@ -11,13 +11,13 @@ async function testFlow() {
 
     if (!forgotData.resetUrl) {
       console.log("Failed to get reset URL. Creating a test user first.");
-      await fetch("http://localhost:5000/api/auth/register", {
+      await fetch("https://almeida-photography-1.onrender.com/api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name: "Tester", email: "test@example.com", password: "password", phone: "123" })
       });
       
-      const retryForgot = await fetch("http://localhost:5000/api/auth/forgotpassword", {
+      const retryForgot = await fetch("https://almeida-photography-1.onrender.com/api/auth/forgotpassword", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: "test@example.com" })
@@ -32,7 +32,7 @@ async function testFlow() {
       console.log("Extracted token:", token);
 
       // 2. Reset Password
-      const resetRes = await fetch(`http://localhost:5000/api/auth/resetpassword/${token}`, {
+      const resetRes = await fetch(`https://almeida-photography-1.onrender.com/api/auth/resetpassword/${token}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password: "newpassword" })

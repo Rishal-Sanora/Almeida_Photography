@@ -3,6 +3,7 @@ import { getServices, deleteService } from "../../services/serviceService";
 import AddServiceForm from "../../components/Forms/AddServiceForm";
 import EditServiceForm from "../../components/Forms/EditServiceForm";
 import AdminModal from "../../components/Modals/AdminModal";
+import { API_BASE_URL } from "../../config";
 
 function ServicesManagement() {
   const [services, setServices] = useState([]);
@@ -78,7 +79,7 @@ function ServicesManagement() {
           <tbody>
             {services.map(service => {
               const imageUrl = service.image?.startsWith("/uploads") 
-                ? `http://localhost:5000${service.image}` 
+                ? `${API_BASE_URL}${service.image}` 
                 : service.image;
 
               return (

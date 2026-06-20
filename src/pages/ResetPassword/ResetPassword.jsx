@@ -5,6 +5,7 @@ import axios from "axios";
 import PageTransition from "../../components/PageTransition";
 import { motion } from "framer-motion";
 import { FaArrowLeft } from "react-icons/fa";
+import { API_BASE_URL } from "../../config";
 
 function ResetPassword() {
   const [password, setPassword] = useState("");
@@ -21,7 +22,7 @@ function ResetPassword() {
 
     setLoading(true);
     try {
-      await axios.put(`http://localhost:5000/api/auth/resetpassword/${resetToken}`, { password });
+      await axios.put(`${API_BASE_URL}/api/auth/resetpassword/${resetToken}`, { password });
       toast.success("Password reset successful. Please login.");
       navigate("/login");
     } catch (err) {

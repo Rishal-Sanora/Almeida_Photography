@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import GlassCard from "../Common/GlassCard";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function ServiceCard({ service }) {
   const imageUrl = service.image?.startsWith("/uploads") 
-    ? `http://localhost:5000${service.image}` 
+    ? `${API_BASE_URL}${service.image}` 
     : service.image;
 
   return (

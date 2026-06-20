@@ -1,6 +1,8 @@
+import { API_BASE_URL } from "../../config";
+
 function PortfolioCard({ photo, onClick }) {
   const imageUrl = photo.image?.startsWith("/uploads") 
-    ? `http://localhost:5000${photo.image}` 
+    ? `${API_BASE_URL}${photo.image}` 
     : photo.image;
 
   return (

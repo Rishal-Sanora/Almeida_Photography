@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import { API_BASE_URL } from "../../config";
 
 function FeaturedPortfolio() {
   const [images, setImages] = useState([]);
@@ -58,7 +59,7 @@ function FeaturedPortfolio() {
               <div className="absolute inset-0 bg-gradient-to-tr from-pink-400/20 to-yellow-400/20 opacity-0 group-hover:opacity-100 transition duration-500 z-10 pointer-events-none"></div>
               <img
                 className="w-full h-full object-cover object-center transform transition-all duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                src={img.image.startsWith("http") ? img.image : `http://localhost:5000${img.image}`}
+                src={img.image.startsWith("http") ? img.image : `${API_BASE_URL}${img.image}`}
                 alt={img.title}
               />
             </motion.div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getPortfolio } from "../../services/portfolioService";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function Portfolio() {
   const [categories, setCategories] = useState([]);
@@ -87,7 +88,7 @@ function Portfolio() {
                 >
                   <div className="relative">
                     <img
-                      src={category.coverImage.startsWith("http") ? category.coverImage : `http://localhost:5000${category.coverImage}`}
+                      src={category.coverImage.startsWith("http") ? category.coverImage : `${API_BASE_URL}${category.coverImage}`}
                       alt={category.name}
                       className="w-full h-64 object-contain transition-all duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100 filter grayscale group-hover:grayscale-0 bg-[#050505]"
                     />

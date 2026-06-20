@@ -3,6 +3,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import useAuth from "../../hooks/useAuth";
 import { AnimatePresence, motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function MyBookings() {
   const [bookings, setBookings] = useState([]);
@@ -12,7 +13,7 @@ function MyBookings() {
   useEffect(() => {
     const fetchMyBookings = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/bookings");
+        const res = await axios.get(`${API_BASE_URL}/api/bookings`);
         // Filter bookings by the logged in user's email case-insensitively
         const userBookings = res.data.filter((b) => b.email?.toLowerCase() === user?.email?.toLowerCase());
         setBookings(userBookings);

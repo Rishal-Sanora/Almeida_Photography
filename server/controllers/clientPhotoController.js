@@ -2,7 +2,7 @@ const ClientPhoto = require("../models/ClientPhoto");
 
 const uploadClientPhotos = async (req, res, next) => {
   try {
-    const images = req.files ? req.files.map(file => `http://localhost:5000/uploads/${file.filename}`) : [];
+    const images = req.files ? req.files.map(file => `https://almeida-photography-1.onrender.com/uploads/${file.filename}`) : [];
     
     const clientPhotoData = {
       name: req.user.name,

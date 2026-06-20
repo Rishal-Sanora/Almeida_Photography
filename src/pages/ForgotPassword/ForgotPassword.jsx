@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import axios from "axios";
 import PageTransition from "../../components/PageTransition";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -15,7 +16,7 @@ function ForgotPassword() {
     setLoading(true);
     setFallbackLink("");
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/forgotpassword", { email });
+      const response = await axios.post(`${API_BASE_URL}/api/auth/forgotpassword`, { email });
       toast.success(response.data.message || "Reset link sent!");
       
       if (response.data.etherealUrl) {

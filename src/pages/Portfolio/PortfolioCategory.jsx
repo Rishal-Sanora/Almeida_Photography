@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getPortfolio } from "../../services/portfolioService";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function PortfolioCategory() {
   const { category } = useParams();
@@ -82,7 +83,7 @@ function PortfolioCategory() {
                 className="break-inside-avoid relative group overflow-hidden rounded-2xl bg-[#050505] border border-[#D4AF37]/20 shadow-2xl"
               >
                 <img
-                  src={photo.image?.startsWith("/uploads") ? `http://localhost:5000${photo.image}` : photo.image}
+                  src={photo.image?.startsWith("/uploads") ? `${API_BASE_URL}${photo.image}` : photo.image}
                   alt={photo.category}
                   className="w-full h-auto block transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"

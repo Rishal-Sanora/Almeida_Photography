@@ -3,6 +3,7 @@ import * as PortfolioService from "../../services/portfolioService";
 import UploadPhotoForm from "../../components/Forms/UploadPhotoForm";
 import PortfolioCard from "../../components/Portfolio/PortfolioCard";
 import AdminModal from "../../components/Modals/AdminModal";
+import { API_BASE_URL } from "../../config";
 
 function PortfolioManagement() {
   const [photos, setPhotos] = useState([]);
@@ -61,7 +62,7 @@ function PortfolioManagement() {
           <div className="text-center">
             <div className="rounded-xl overflow-hidden mb-6 shadow-md border border-gray-100">
               <img 
-                src={selectedPhoto.image?.startsWith("/uploads") ? `http://localhost:5000${selectedPhoto.image}` : selectedPhoto.image} 
+                src={selectedPhoto.image?.startsWith("/uploads") ? `${API_BASE_URL}${selectedPhoto.image}` : selectedPhoto.image} 
                 alt={selectedPhoto.category || "Portfolio Item"} 
                 className="w-full max-h-96 object-contain bg-gray-50"
               />

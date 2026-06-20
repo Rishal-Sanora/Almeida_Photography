@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { API_BASE_URL } from "../../config";
 
 function UploadPhotos() {
   const [eventName, setEventName] = useState("");
@@ -20,7 +21,7 @@ function UploadPhotos() {
     try {
       setLoading(true);
       const token = localStorage.getItem("token");
-      await axios.post("http://localhost:5000/api/clientphotos", formData, {
+      await axios.post(`${API_BASE_URL}/api/clientphotos`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
           Authorization: `Bearer ${token}`

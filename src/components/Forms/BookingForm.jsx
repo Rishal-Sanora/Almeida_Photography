@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { getServices } from "../../services/serviceService";
 import useAuth from "../../hooks/useAuth";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from "../../config";
 
 function BookingForm() {
   const { register, handleSubmit, reset } = useForm();
@@ -34,7 +35,7 @@ function BookingForm() {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:5000/api/bookings", data);
+      await axios.post(`${API_BASE_URL}/api/bookings`, data);
       toast.success("Booking submitted successfully!");
       reset({
         name: user?.name || "",
