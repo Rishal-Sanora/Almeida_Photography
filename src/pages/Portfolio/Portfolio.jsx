@@ -3,8 +3,14 @@ import { Link } from "react-router-dom";
 import { getPortfolio } from "../../services/portfolioService";
 import { motion } from "framer-motion";
 import { API_BASE_URL } from "../../config";
+import { useSEO } from "../../hooks/useSEO";
 
 function Portfolio() {
+  useSEO({
+    title: "Portfolio",
+    description: "Explore the stunning photography portfolio of Almeida Photography. Browse through our collections of weddings, events, portraits, and more."
+  });
+
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
 

@@ -9,8 +9,14 @@ import {
   FaInstagram,
   FaWhatsapp
 } from "react-icons/fa";
+import { useSEO } from "../../hooks/useSEO";
 
 function Contact() {
+  useSEO({
+    title: "Contact Us",
+    description: "Get in touch with Almeida Photography to book your next session. We serve Bengaluru and beyond for weddings, events, and portrait photography."
+  });
+
   return (
     <section className="bg-[#fffaf0] min-h-screen py-24 relative z-10 flex items-center justify-center overflow-hidden">
       <div className="max-w-4xl w-full mx-auto px-4">

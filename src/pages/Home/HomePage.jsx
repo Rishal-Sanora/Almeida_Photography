@@ -6,8 +6,14 @@ import FeaturedPortfolio from "../../components/FeaturedPortfolio/FeaturedPortfo
 import FilmRollGallery from "../../components/FilmRollGallery/FilmRollGallery";
 import CTA from "../../components/CTA/CTA";
 import PageTransition from "../../components/PageTransition";
+import { useSEO } from "../../hooks/useSEO";
 
 function Home() {
+  useSEO({
+    title: "Home",
+    description: "Welcome to Almeida Photography. We capture your special moments with elegance, offering premium wedding, event, and portrait photography."
+  });
+
   return (
     <PageTransition>
       <Hero />

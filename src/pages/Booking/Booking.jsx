@@ -1,7 +1,13 @@
 import BookingForm from "../../components/Forms/BookingForm";
 import PageTransition from "../../components/PageTransition";
+import { useSEO } from "../../hooks/useSEO";
 
 function Booking() {
+  useSEO({
+    title: "Book a Session",
+    description: "Book your professional photography session with Almeida Photography today. Secure your date for weddings, private events, or portraits."
+  });
+
   return (
     <PageTransition>
       <section className="bg-transparent min-h-screen py-32 px-6 relative z-10 overflow-hidden">

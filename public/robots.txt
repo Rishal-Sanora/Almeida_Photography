@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://almeidaphotography.vercel.app/sitemap.xml

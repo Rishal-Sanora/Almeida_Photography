@@ -3,8 +3,14 @@ import { getServices } from "../../services/serviceService";
 import ServiceCard from "../../components/ServiceCard/ServiceCard";
 import { motion } from "framer-motion";
 import PageTransition from "../../components/PageTransition";
+import { useSEO } from "../../hooks/useSEO";
 
 function Services() {
+  useSEO({
+    title: "Services & Pricing",
+    description: "Discover our professional photography services. From weddings and corporate events to private portraits, we have a package for every occasion."
+  });
+
   const [services, setServices] = useState([]);
 
   useEffect(() => {
